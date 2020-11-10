@@ -4,7 +4,22 @@
   "description": "Dream bank project",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "node --inspect=5858 -r ts-node/register ./src/server.ts",
+    "start:watch": "nodemon",
+    "build": "tsc"
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "**/*.test.ts",
+      "**/*.spec.ts",
+      ".git",
+      "node_modules"
+    ],
+    "watch": [
+      "src"
+    ],
+    "exec": "npm start",
+    "ext": "ts"
   },
   "repository": {
     "type": "git",
@@ -15,5 +30,16 @@
   "bugs": {
     "url": "https://github.com/miguelrock22/dream_bank/issues"
   },
-  "homepage": "https://github.com/miguelrock22/dream_bank#readme"
+  "homepage": "https://github.com/miguelrock22/dream_bank#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "@types/node": "^14.14.7",
+    "eslint": "^7.13.0",
+    "eslint-plugin-import": "^2.22.1",
+    "nodemon": "^2.0.6",
+    "ts-node": "^9.0.0",
+    "typescript": "^4.0.5"
+  }
 }
