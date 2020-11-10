@@ -1,0 +1,19 @@
+{
+  "name": "dream_bank",
+  "version": "0.1.0",
+  "description": "Dream bank project",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/miguelrock22/dream_bank.git"
+  },
+  "author": "Miguel Montoya",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/miguelrock22/dream_bank/issues"
+  },
+  "homepage": "https://github.com/miguelrock22/dream_bank#readme"
+}
