@@ -6,7 +6,10 @@
   "scripts": {
     "start": "node --inspect=5858 -r ts-node/register ./src/server.ts",
     "start:watch": "nodemon",
-    "build": "tsc"
+    "build": "tsc",
+    "migrate": "npm run build && node_modules/.bin/sequelize db:migrate",
+    "migrate:undo": "npm run build && node_modules/.bin/sequelize db:migrate:undo",
+    "migrate:undo:all": "npm run build && node_modules/.bin/sequelize db:migrate:undo:all"
   },
   "nodemonConfig": {
     "ignore": [
@@ -43,6 +46,7 @@
     "eslint": "^7.13.0",
     "eslint-plugin-import": "^2.22.1",
     "nodemon": "^2.0.6",
+    "sequelize-cli": "^6.2.0",
     "ts-node": "^9.0.0",
     "typescript": "^4.0.5"
   }
