@@ -3,7 +3,7 @@ import { BaseModel } from './base';
 
 export interface IUser {
   id?: string;
-  document: string;
+  document?: string;
   name?: string;
   password?: string;
 }
@@ -14,7 +14,7 @@ export class User extends BaseModel implements IUser {
   public static readonly TableName: string = 'Users';
   public static readonly DefaultScope: FindOptions = {};
 
-  public id!: string;
+  public id: string;
   public document!: string;
   public name: string;
   public password: string;
@@ -30,10 +30,11 @@ export class User extends BaseModel implements IUser {
         },
         document: new DataTypes.STRING(15),
         name: new DataTypes.STRING(100),
-        password: new DataTypes.STRING(100),
+        password: new DataTypes.STRING(100)
       },
       {
-        sequelize: sequelize,
+        sequelize,
+
         tableName: this.TableName,
         name: {
           singular: this.ModelName,
@@ -41,13 +42,7 @@ export class User extends BaseModel implements IUser {
         },
         defaultScope: this.DefaultScope,
         comment: 'Model for the public accessible data of an user',
-      },
+      }
     );
-  }
-
-  public static setAssociations(modelCtors: {
-    [modelName: string]: ModelCtor<Model>;
-  }) {
-    // Associations
   }
 }

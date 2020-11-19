@@ -27,7 +27,7 @@ export class AccountType extends BaseModel implements IAccountType {
         name: new DataTypes.STRING(100),
       },
       {
-        sequelize: sequelize,
+        sequelize,
         tableName: this.TableName,
         name: {
           singular: this.ModelName,

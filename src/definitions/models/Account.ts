@@ -30,12 +30,12 @@ export class Account extends BaseModel implements IAccount {
           defaultValue: DataTypes.UUIDV4,
           comment: 'Id of the instance',
         },
-        userId: new DataTypes.INTEGER(),
-        typeId: new DataTypes.INTEGER(),
+        userId: DataTypes.UUID,
+        typeId: DataTypes.UUID,
         name: new DataTypes.STRING(100),
       },
       {
-        sequelize: sequelize,
+        sequelize,
         tableName: this.TableName,
         name: {
           singular: this.ModelName,

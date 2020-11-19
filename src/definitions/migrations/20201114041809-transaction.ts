@@ -14,20 +14,18 @@ export async function up(query: QueryInterface) {
       accountId: {
         type: DataTypes.UUID,
         allowNull: false,
-        unique: true,
         comment: 'foreign key account',
         references: {
-            model: "Account",
+            model: "Accounts",
             key: "id"
         }
       },
       typeId: {
         type: DataTypes.UUID,
         allowNull: false,
-        unique: true,
         comment: 'foreign key Transactiontype',
         references: {
-            model: "TransactionType",
+            model: "TransactionTypes",
             key: "id"
         }
       },
@@ -47,7 +45,7 @@ export async function up(query: QueryInterface) {
           comment: "Status of the transaction"
       },
       date: {
-          type: new DataTypes.DATE(20),
+          type: new DataTypes.DATE,
           allowNull: false,
           comment: "Date of the transaction"
       }

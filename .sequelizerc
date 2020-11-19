@@ -2,6 +2,7 @@ const path = require('path');
 
 module.exports = {
   'models-path': path.resolve('lib', 'definitions', 'models'),
-  'seeders-path': path.resolve('lib','database', 'seeders'),
-  'migrations-path': path.resolve('lib','database','migrations')
+  'seeders-path': path.resolve('lib','definitions', 'seeders'),
+  'migrations-path': path.resolve('lib','definitions','migrations'),
+  'env': 'production'
 };

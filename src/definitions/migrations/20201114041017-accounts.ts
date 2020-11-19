@@ -14,21 +14,19 @@ export async function up(query: QueryInterface) {
       userId: {
         type: DataTypes.UUID,
         allowNull: false,
-        unique: true,
         comment: 'foreign key user',
         references: {
-            model: "User",
-            key: "id"
+          model: "Users",
+          key: "id"
         }
       },
       typeId: {
         type: DataTypes.UUID,
         allowNull: false,
-        unique: true,
         comment: 'foreign key type',
         references: {
-            model: "AccountType",
-            key: "id"
+          model: "AccountTypes",
+          key: "id"
         }
       },
       name: {

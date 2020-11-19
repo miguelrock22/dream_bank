@@ -12,7 +12,7 @@ export async function up(query: QueryInterface) {
         comment: 'Id of the instance',
       },
       document: {
-        type: new DataTypes.STRING(),
+        type: new DataTypes.STRING(15),
         allowNull: false,
         unique: true,
         comment: 'Unique document of the user',

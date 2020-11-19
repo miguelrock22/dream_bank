@@ -44,7 +44,7 @@ export class Transaction extends BaseModel implements ITransaction {
         date: new DataTypes.DATE(20)
       },
       {
-        sequelize: sequelize,
+        sequelize,
         tableName: this.TableName,
         name: {
           singular: this.ModelName,

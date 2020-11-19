@@ -27,7 +27,7 @@ export class TransactionType extends BaseModel implements ITransactionType {
         name: new DataTypes.STRING(100),
       },
       {
-        sequelize: sequelize,
+        sequelize,
         tableName: this.TableName,
         name: {
           singular: this.ModelName,
